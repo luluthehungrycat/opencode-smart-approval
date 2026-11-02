@@ -1,0 +1,13 @@
+{
+  "name": "opencode-smart-approval",
+  "version": "0.1.0",
+  "description": "Conservative deterministic and LLM permission review for OpenCode V2",
+  "type": "module",
+  "license": "MIT",
+  "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"}},
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": {"node": ">=22"},
+  "scripts": {"build": "tsc -p tsconfig.json", "typecheck": "tsc --noEmit", "test": "tsx --test test/*.test.ts", "check": "npm run typecheck && npm test && npm run build", "prepack": "npm run build"},
+  "peerDependencies": {"@opencode/plugin": "^2.2.0"},
+  "devDependencies": {"@opencode/plugin": "2.2.0", "@types/node": "^22.0.0", "tsx": "^4.20.0", "typescript": "^5.9.0"}
+}
